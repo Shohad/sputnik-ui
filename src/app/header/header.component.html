@@ -1,0 +1,31 @@
+<div class="sputnikd-ui-side-bar">
+    <mat-toolbar color="primary" class="sputnikd-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="sputnikd-app-name"></h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sputnikd-sidenav-container">
+        <mat-sidenav #snav fixedTopGap="56">
+            <mat-nav-list>
+                <mat-list-item routerLink="[item.route]">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <mat-icon>check_circle</mat-icon>Checks in
+                    </div>
+                </mat-list-item>
+                <mat-list-item routerLink="[item.route]">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <mat-icon>settings</mat-icon>Settings
+                    </div>
+                </mat-list-item>
+                <mat-list-item routerLink="[item.route]">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <mat-icon>help</mat-icon>Help
+                    </div>
+                </mat-list-item>
+
+            </mat-nav-list>
+        </mat-sidenav>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,59 @@
+<div>
+    <div class="add-title">
+        <h2 class="primary">Add Guest</h2>
+    </div>
+    <div>
+        <form [formGroup]="addGuestFormGroup" (change)="formChanged()">
+
+            <div fxLayout="row" fxLayout.xs="column">
+                <mat-form-field fxFlex="50%;" fxFlex.xs="80%">
+                    <input matInput placeholder="First Name" formControlName="guestFirstName" required>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestFirstName.hasError('required')">
+                        Please enter first name
+                    </mat-error>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestFirstName.hasError('pattern')">
+                        Please enter valid first name
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="50%;" fxFlex.xs="80%">
+                    <input matInput placeholder="Last Name" formControlName="guestLastName" required>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestLastName.hasError('required')">
+                        Please enter first name
+                    </mat-error>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestLastName.hasError('pattern')">
+                        Please enter valid first name
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column">
+                <mat-form-field fxFlex="50%;" fxFlex.xs="80%">
+                    <input matInput placeholder="Phone number" formControlName="guestPhone" required>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestPhone.hasError('required')">
+                        Please enter phone number
+                    </mat-error>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestPhone.hasError('pattern')">
+                        Please enter valid phone number
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="50%;" fxFlex.xs="80%">
+                    <input matInput type="email" placeholder="Email" formControlName="guestEmail" required>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestEmail.hasError('required')">
+                        Please email address
+                    </mat-error>
+                    <mat-error *ngIf="addGuestFormGroup.controls.guestEmail.hasError('pattern')">
+                        Please enter valid email address
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+                <button mat-raised-button type="submit" color="primary" class="Update-btn">Save</button>
+                <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</div>

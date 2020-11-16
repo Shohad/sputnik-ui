@@ -1,0 +1,68 @@
+<div class="app-ui-page-container">
+
+    <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="">
+            <div class="block">
+                <div class="app-ui-label app-ui-padding-bottom-16">
+                    <mat-label class="app-ui-label app-ui-padding-right-16"> Restaurant:</mat-label>
+                    <span class="app-ui-home-business-info">{{loggedInBusiness.name}}</span>
+                </div>
+                <div class="app-ui-label" class="app-ui-label app-ui-padding-bottom-16">
+                    <mat-label class="app-ui-label app-ui-padding-right-16"> Location:</mat-label>
+                    <span class="app-ui-home-business-info">
+                        {{loggedInBusiness.streetNumber}}
+                        {{loggedInBusiness.streetName}} {{loggedInBusiness.city}}</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item item-2" fxFlex="">
+            <div class="block">
+                <div class="block app-ui-padding-bottom-16">
+                    <button mat-raised-button class="app-ui-home-controls" color="primary">Download QR Code</button>
+                </div>
+                <div class="block app-ui-padding-bottom-16">
+                    <mat-label>Guest simply need to scan the QR code and follow the instructions to check-in. Print this
+                        code and leave it at teh entrance or on table </mat-label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="">
+            <div class="block">
+                <div class="block app-ui-padding-bottom-16">
+                    <input class="app-ui-search-input app-ui-home-controls" matInput type="text" placeholder="Search.."
+                        name="search">
+                </div>
+                <div class="block">
+                    <mat-form-field class="app-ui-home-controls" fxFlex.xs="100%">
+                        <mat-label>Enter a date range</mat-label>
+                        <mat-date-range-input [rangePicker]="picker">
+                            <input matStartDate matInput placeholder="Start date">
+                            <input matEndDate matInput placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+
+                <div class="block app-ui-padding-bottom-16">
+                    <button mat-raised-button class="app-ui-home-controls" color="primary">Export</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="item item-2 app-ui-padding-bottom-16 " fxFlex="">
+            <button mat-raised-button class="app-ui-home-controls" color="primary" (click)="openDialog()">Add a
+                guest</button>
+        </div>
+    </div>
+
+    <app-data-table></app-data-table>
+
+
+</div>

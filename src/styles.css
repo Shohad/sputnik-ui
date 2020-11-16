@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.app-ui-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.app-ui-padding-bottom-16 {
+    padding-bottom: 1rem;
+}
+
+.app-ui-padding-top-16 {
+    padding-top: 1rem;
+}
+
+.app-ui-padding-right-16 {
+    padding-right: 1rem;
+}
+
+.app-ui-padding-left-16 {
+    padding-left: 1rem;
+}
+
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: lightseagreen;
+}
